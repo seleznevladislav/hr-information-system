@@ -7,10 +7,17 @@ Ext.define('HRSystem.view.main.MainModel', {
     alias: 'viewmodel.main',
 
     data: {
-        name: 'HRSystem',
+        name: 'Кадровая служба',
 
-        loremIpsum: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-    }
+        baseInformation: `
+		<div class="base-information">
+			<h1>О Компании</h1> 
+			<p>Данная работа была выполнена в рамках дисциплины "Управление нормативно-справочной информацией" Московского Политехнического университета.</p>
+			<p>4 курс, группа 201-323</p>
+			<p>Селезнев Владислав Константинович</p>
+			<p>Перейдя по <a href="https://github.com/seleznevladislav/hr-information-system">ссылке</a>, вы найдете полный код программы</p>
+		</div>`,
 
-    //TODO - add data, formulas and/or methods to support your view
+        settings: 'Раздел в разработке',
+    },
 });

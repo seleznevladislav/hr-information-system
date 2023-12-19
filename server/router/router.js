@@ -8,5 +8,7 @@ const router = Router()
 router
 	.post("/add", Controller.addItem)
 	.get('/users', Controller.getUsers)
+	
+router.get('/positions', Controller.getPositions)
 
 export default router

@@ -1,13 +1,12 @@
-Ext.define('HRSystem.store.Personnel', {
+Ext.define('HRSystem.store.Positions', {
     extend: 'Ext.data.Store',
-    alias: 'store.personnel',
+    alias: 'store.positions',
 
     autoLoad: true,
-    model: 'HRSystem.model.Personnel',
 
     proxy: {
         type: 'ajax',
-        url: 'users',
+        url: 'positions',
 
         reader: {
             type: 'json',

@@ -13,12 +13,14 @@ Ext.define('HRSystem.view.users.View', {
     },
 
     columns: [
-        { text: 'Name',  dataIndex: 'name' },
-        { text: 'Email', dataIndex: 'email', flex: 1 },
-        { text: 'Phone', dataIndex: 'phone', flex: 1 }
+        { text: 'ФИО',  dataIndex: 'name', flex: 1 },
+        { text: 'Отдел', dataIndex: 'Department', renderer(value) { return value.name; }, flex: 1 },
+        { text: 'Занимаемая должность', dataIndex: 'Position', renderer(value) { return value.name; }, flex: 1 },
+        { text: 'Рабочая почта', dataIndex: 'email', flex: 1 },
+        { text: 'Рабочий телефон', dataIndex: 'phone', flex: 1 },
     ],
 
     listeners: {
-        select: 'onItemSelected'
-    }
+        select: 'onItemSelected',
+    },
 });

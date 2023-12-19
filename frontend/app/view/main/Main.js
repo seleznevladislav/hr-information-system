@@ -58,7 +58,7 @@ Ext.define('HRSystem.view.main.Main', {
             responsiveConfig: {
                 wide: {
                     iconAlign: 'left',
-                    textAlign: 'left',
+                    textAlign: 'center',
                 },
                 tall: {
                     iconAlign: 'top',
@@ -75,7 +75,7 @@ Ext.define('HRSystem.view.main.Main', {
             iconCls: 'fa-home',
 
             bind: {
-                html: '{loremIpsum}',
+                html: '{baseInformation}',
             },
         },
         {
@@ -90,7 +90,7 @@ Ext.define('HRSystem.view.main.Main', {
         },
         {
             title: 'Должности',
-            iconCls: 'fa-users',
+            iconCls: 'fa-book',
 
             items: [
                 {
@@ -102,7 +102,7 @@ Ext.define('HRSystem.view.main.Main', {
             title: 'Settings',
             iconCls: 'fa-cog',
             bind: {
-                html: '{loremIpsum}',
+                html: '{settings}',
             },
         },
     ],

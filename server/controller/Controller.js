@@ -25,9 +25,7 @@ const addItem = async (req, res, next) => {
 const getUsers = async (req, res, next) => {
 	try {
 			const data = await Service.getUsers()
-			// const photos = await Service.getPhotos()
 			res.send(data)
-			// res.send(photos)
 
 			next();
 	} catch(e) {
@@ -36,7 +34,21 @@ const getUsers = async (req, res, next) => {
 	}
 }
 
+const getPositions = async (req, res, next) => {
+	try {
+		console.log('work2')
+		const data = await Service.getPositions()
+		res.send(data)
+
+		next();
+	} catch (error) {
+		console.error(e);
+		res.sendStatus(500);
+	}
+}
+
 export default {
 	addItem,
 	getUsers, 
+	getPositions,
 }
