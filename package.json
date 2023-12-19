@@ -1,0 +1,24 @@
+{
+  "name": "dockerapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seleznevladislav/hr-information-system.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seleznevladislav/hr-information-system/issues"
+  },
+  "homepage": "https://github.com/seleznevladislav/hr-information-system#readme",
+  "dependencies": {
+    "cd": "^0.3.3",
+    "eslint": "^8.56.0",
+    "server": "file:server"
+  }
+}

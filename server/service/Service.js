@@ -9,8 +9,6 @@ const getUsers = async () => {
 				Position ( name )
 				`);
 
-			console.log(process.env.SUPABASE_KEY)
-
 			if (error) {
 				console.log(error);
 			}

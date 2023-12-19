@@ -9,8 +9,8 @@ Ext.define('HRSystem.view.main.Main', {
         'HRSystem.view.main.MainController',
         'HRSystem.view.main.MainModel',
 
-		'HRSystem.view.positions.View',
-		'HRSystem.view.users.View',
+        'HRSystem.view.positions.View',
+        'HRSystem.view.users.View',
     ],
 
     controller: 'main',
@@ -24,32 +24,32 @@ Ext.define('HRSystem.view.main.Main', {
 
     header: {
         layout: {
-            align: 'stretchmax'
+            align: 'stretchmax',
         },
         title: {
             bind: {
-                text: '{name}'
+                text: '{name}',
             },
-            flex: 0
+            flex: 0,
         },
-        iconCls: 'fa-th-list'
+        iconCls: 'fa-th-list',
     },
 
     tabBar: {
         flex: 1,
         layout: {
             align: 'stretch',
-            overflowHandler: 'none'
-        }
+            overflowHandler: 'none',
+        },
     },
 
     responsiveConfig: {
         tall: {
-            headerPosition: 'top'
+            headerPosition: 'top',
         },
         wide: {
-            headerPosition: 'left'
-        }
+            headerPosition: 'left',
+        },
     },
 
     defaults: {
@@ -58,50 +58,52 @@ Ext.define('HRSystem.view.main.Main', {
             responsiveConfig: {
                 wide: {
                     iconAlign: 'left',
-                    textAlign: 'left'
+                    textAlign: 'left',
                 },
                 tall: {
                     iconAlign: 'top',
                     textAlign: 'center',
-                    width: 120
-                }
-            }
-        }
+                    width: 120,
+                },
+            },
+        },
     },
 
     items: [
-		{
-			title: 'Home',
-			iconCls: 'fa-home', 
+        {
+            title: 'О компании',
+            iconCls: 'fa-home',
 
-			bind: {
-				html: '{loremIpsum}'
-			}     
-		}, 
-	{
-        title: 'Сотрудники',
-        iconCls: 'fa-user',
-		
-		items: [
-			{
-				xtype: 'usersPanel',
-			}
-		]
-    }, 
-	{
-        title: 'Должности',
-        iconCls: 'fa-users',
+            bind: {
+                html: '{loremIpsum}',
+            },
+        },
+        {
+            title: 'Сотрудники',
+            iconCls: 'fa-user',
 
-		items: [{
-            xtype: 'positionsPanel'
-        }]
-    }, 
-	{
-        title: 'Settings',
-        iconCls: 'fa-cog',
-        bind: {
-            html: '{loremIpsum}'
-        }
-    },
-	]
+            items: [
+                {
+                    xtype: 'usersPanel',
+                },
+            ],
+        },
+        {
+            title: 'Должности',
+            iconCls: 'fa-users',
+
+            items: [
+                {
+                    xtype: 'positionsPanel',
+                },
+            ],
+        },
+        {
+            title: 'Settings',
+            iconCls: 'fa-cog',
+            bind: {
+                html: '{loremIpsum}',
+            },
+        },
+    ],
 });

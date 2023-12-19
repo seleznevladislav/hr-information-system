@@ -1,0 +1,13 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "This folder is primarily a container for the top-level pieces of the application.\r While you can remove some files and folders that this application does not use,\r be sure to read below before deciding what can be deleted and what needs to be\r kept in source control.",
+  "main": "app.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb": "^19.0.4"
+  }
+}

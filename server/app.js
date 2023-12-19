@@ -15,5 +15,5 @@ app.use(express.urlencoded( {extended: false}))
 app.use(Router);
 
 app.listen(PORT, () => {
-	console.log(`Server started at PORT ${PORT}`)
+	console.log(`Server started at http://localhost:${PORT}`)
 })
