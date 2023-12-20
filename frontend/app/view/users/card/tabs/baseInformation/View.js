@@ -55,17 +55,6 @@ Ext.define('HRSystem.view.users.card.tabs.baseInformation.View', {
                 readOnly: '{userId && !admin}',
             },
         },
-        // {
-        //     fieldLabel: 'Должность',
-        //     itemId: 'positionField',
-        //     hidden: true,
-        //     allowBlank: true,
-
-        //     bind: {
-        //         readOnly: '{userId}',
-        //         hidden: '{!userId}',
-        //     },
-        // },
         {
             xtype: 'combobox',
             fieldLabel: 'Должность',
@@ -92,7 +81,6 @@ Ext.define('HRSystem.view.users.card.tabs.baseInformation.View', {
 
             bind: {
                 readOnly: '{userId && !admin}',
-                // hidden: '{userId}',
             },
 
             store: {
