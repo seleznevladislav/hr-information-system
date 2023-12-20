@@ -4,6 +4,5 @@ Ext.define('HRSystem.view.users.card.ViewModel', {
 
     data: {
         userId: null,
-        admin: true,
     },
 });

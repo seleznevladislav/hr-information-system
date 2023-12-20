@@ -19,5 +19,7 @@ Ext.define('HRSystem.view.main.MainModel', {
 		</div>`,
 
         settings: 'Раздел в разработке',
+
+        admin: false,
     },
 });

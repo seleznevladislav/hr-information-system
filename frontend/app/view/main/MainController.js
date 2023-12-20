@@ -1,19 +1,13 @@
-/**
- * This class is the controller for the main view for the application. It is specified as
- * the "controller" of the Main view class.
- */
 Ext.define('HRSystem.view.main.MainController', {
     extend: 'Ext.app.ViewController',
-
     alias: 'controller.main',
 
-    onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
-    },
+    logOut(view) {
+        const main = view.up('app-main');
 
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
-        }
-    }
+        Ext.destroy(main);
+        localStorage.removeItem('SESSION');
+
+        Ext.create('HRSystem.view.login.View').show();
+    },
 });

@@ -15,7 +15,7 @@ Ext.define('HRSystem.view.main.Main', {
 
     controller: 'main',
     viewModel: 'main',
-
+    plugins: 'viewport',
     ui: 'navigation',
 
     tabBarHeaderPosition: 1,
@@ -101,9 +101,14 @@ Ext.define('HRSystem.view.main.Main', {
         {
             title: 'Настройки',
             iconCls: 'fa-cog',
-            bind: {
-                html: '{settings}',
-            },
+
+            items: [
+                {
+                    xtype: 'button',
+                    text: 'Выйти из системы',
+                    handler: 'logOut',
+                },
+            ],
         },
     ],
 });

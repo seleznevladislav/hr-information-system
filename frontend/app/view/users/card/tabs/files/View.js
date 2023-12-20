@@ -27,6 +27,11 @@ Ext.define('HRSystem.view.users.card.tabs.files.View', {
             text: 'Создать',
             ui: 'default',
             handler: 'uploadFile',
+            hidden: true,
+
+            bind: {
+                hidden: '{!admin}',
+            },
         },
     ],
 

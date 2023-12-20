@@ -2,6 +2,12 @@ Ext.define('HRSystem.view.users.ViewController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.users',
 
+    control: {
+        usersPanel: {
+            beforerender: 'setRights',
+        },
+    },
+
     openUserCard(_view, record) {
         const isCardForNewUser = record.type === 'click';
 
@@ -26,13 +32,17 @@ Ext.define('HRSystem.view.users.ViewController', {
             const userBaseInfo = tabsPanel.down('userBaseInformation');
 
             userBaseInfo.loadRecord(record);
-
-            // const position = record.get('Position').name;
-            // const positionField = userBaseInfo.down('#positionField');
-
-            // positionField.setRawValue(position);
         }
 
         userCard.show();
+    },
+
+    setRights(view) {
+        const mainViewModel = view.up('app-main').getViewModel();
+
+        const isAdmin = mainViewModel.get('admin');
+
+        const usersViewModel = view.getViewModel();
+        usersViewModel.set({ admin: isAdmin });
     },
 });

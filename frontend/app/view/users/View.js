@@ -1,7 +1,9 @@
 Ext.define('HRSystem.view.users.View', {
     extend: 'Ext.grid.Panel',
     xtype: 'usersPanel',
+    itemId: 'usersPanel',
     controller: 'users',
+    viewModel: {},
 
     requires: ['HRSystem.store.Personnel', 'HRSystem.view.users.ViewController'],
 
@@ -17,6 +19,11 @@ Ext.define('HRSystem.view.users.View', {
             text: 'Завести нового сотрудника',
             ui: 'default',
             handler: 'openUserCard',
+            hidden: true,
+
+            bind: {
+                hidden: '{!admin}',
+            },
         },
     ],
 

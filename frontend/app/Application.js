@@ -11,17 +11,21 @@ Ext.define('HRSystem.Application', {
     quickTips: false,
     platformConfig: {
         desktop: {
-            quickTips: true
-        }
+            quickTips: true,
+        },
     },
 
-    onAppUpdate: function () {
-        Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
-            function (choice) {
-                if (choice === 'yes') {
-                    window.location.reload();
-                }
+    onAppUpdate() {
+        Ext.Msg.confirm('Application Update', 'This application has an update, reload?', (choice) => {
+            if (choice === 'yes') {
+                window.location.reload();
             }
-        );
-    }
+        });
+    },
+
+    launch() {
+        const session = localStorage.getItem('SESSION');
+
+        Ext.widget(session ? 'app-main' : 'login');
+    },
 });

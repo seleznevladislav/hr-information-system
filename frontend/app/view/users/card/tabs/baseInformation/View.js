@@ -96,6 +96,10 @@ Ext.define('HRSystem.view.users.card.tabs.baseInformation.View', {
             text: 'Сохранить',
             formBind: true,
             handler: 'saveUserInformation',
+
+            bind: {
+                hidden: '{!admin}',
+            },
         },
         {
             text: 'Закрыть',
