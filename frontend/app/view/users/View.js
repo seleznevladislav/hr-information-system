@@ -14,6 +14,68 @@ Ext.define('HRSystem.view.users.View', {
     },
 
     tbar: [
+        {
+            xtype: 'textfield',
+            emptyText: 'ФИО',
+            queryMode: 'remote',
+            typeAhead: true,
+            editable: true,
+            minChars: 1,
+            width: 230,
+            property: 'name',
+
+            triggers: {
+                clear: {
+                    cls: 'x-form-clear-trigger',
+                    handler: 'resetField',
+                },
+                search: {
+                    cls: 'x-form-search-trigger',
+                    handler: 'searchByField',
+                },
+            },
+
+            listeners: {
+                specialkey: 'checkSpecialKey',
+            },
+        },
+        {
+            xtype: 'combobox',
+            emptyText: 'Должности',
+            queryMode: 'remote',
+            displayField: 'name',
+            valueField: 'id',
+            property: 'position_id',
+        
+            width: 330,
+
+            editable: true,
+            forceSelection: true,
+            typeAhead: true,
+
+            queryDelay: 100,
+            queryCaching: true,
+            minChars: 2,
+
+            triggers: {
+                clear: {
+                    cls: 'x-form-clear-trigger',
+                    handler: 'resetField',
+                },
+                search: {
+                    cls: 'x-form-search-trigger',
+                    handler: 'searchByField',
+                },
+            },
+
+            store: {
+                type: 'positions',
+            },
+
+            listeners: {
+                select: 'searchByField',
+            },
+        },
         '->',
         {
             text: 'Завести нового сотрудника',

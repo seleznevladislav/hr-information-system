@@ -1,12 +1,27 @@
-import e from 'express';
 import supabase from '../configs/dbConfig.js';
 
-const getUsers = async () => {
+const getUsers = async (req) => {
+
+	const filterQuery = req?.query?.filter ? JSON.parse(req?.query?.filter) : [];
+	const nameFilter = filterQuery.find((query) => query.property === 'name')
+	const departmentFilter = filterQuery.find((query) => query.property === 'position_id')
+
+
     try {
-        const { data, error } = await supabase.from('Users').select(`id, name, email, phone, position_id, 
+    	const request = supabase.from('Users').select(`id, name, email, phone, position_id, 
 				Department ( name, id ),
 				Position ( name, id )
 				`);
+
+		if (nameFilter?.value) {
+			request.ilike('name', `%${nameFilter.value}%`);
+		}
+
+		if (departmentFilter?.value) {
+			request.eq('position_id', departmentFilter.value);
+		}
+
+		const { data, error } = await request;
 
         if (error) {
             console.log(error);

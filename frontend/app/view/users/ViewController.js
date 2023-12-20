@@ -45,4 +45,38 @@ Ext.define('HRSystem.view.users.ViewController', {
         const usersViewModel = view.getViewModel();
         usersViewModel.set({ admin: isAdmin });
     },
+
+    checkSpecialKey(field, e) {
+        if (e.keyCode !== 13) {
+            return;
+        }
+
+        this.searchByField(field);
+    },
+
+    searchByField(field) {
+        const { property, operator } = field;
+        console.log(property);
+
+        const store = field.up('usersPanel').getStore();
+
+        store.addFilter({
+            id: property,
+            value: field.getValue(),
+            operator: '=',
+            property,
+        });
+
+        store.load();
+    },
+
+    resetField(field) {
+        field.setValue(null);
+
+        const store = field.up('usersPanel').getStore();
+
+        store.removeFilter(field.property);
+
+        store.load();
+    },
 });

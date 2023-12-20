@@ -24,7 +24,7 @@ const addItem = async (req, res, next) => {
 
 const getUsers = async (req, res, next) => {
     try {
-        const data = await Service.getUsers();
+        const data = await Service.getUsers(req);
         res.send(data);
 
         next();
