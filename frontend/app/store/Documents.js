@@ -1,13 +1,13 @@
-Ext.define('HRSystem.store.Positions', {
+Ext.define('HRSystem.store.Documents', {
     extend: 'Ext.data.Store',
-    alias: 'store.positions',
+    alias: 'store.documents',
 
-    autoLoad: true,
+    autoLoad: false,
     remoteFilter: true,
 
     proxy: {
         type: 'ajax',
-        url: 'positions',
+        url: 'documents',
 
         reader: {
             type: 'json',

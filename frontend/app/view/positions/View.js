@@ -19,4 +19,8 @@ Ext.define('HRSystem.view.positions.View', {
     listeners: {
         select: 'onItemSelected',
     },
+
+    bbar: {
+        xtype: 'pagingtoolbar',
+    },
 });

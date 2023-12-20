@@ -3,6 +3,7 @@ Ext.define('HRSystem.store.Personnel', {
     alias: 'store.personnel',
 
     autoLoad: true,
+    remoteFilter: true,
     model: 'HRSystem.model.Personnel',
 
     proxy: {

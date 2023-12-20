@@ -15,6 +15,7 @@ parserOptions:
 
 globals:
   Ext: true
+  Filter: true
 
 rules:
   eol-last: 0

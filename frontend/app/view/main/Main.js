@@ -99,7 +99,7 @@ Ext.define('HRSystem.view.main.Main', {
             ],
         },
         {
-            title: 'Settings',
+            title: 'Настройки',
             iconCls: 'fa-cog',
             bind: {
                 html: '{settings}',
