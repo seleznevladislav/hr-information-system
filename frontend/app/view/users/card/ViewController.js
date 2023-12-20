@@ -131,6 +131,13 @@ Ext.define('HRSystem.view.users.card.ViewController', {
                             buttonConfig: {
                                 iconCls: 'upload-icon',
                             },
+
+                            listeners: {
+                                afterrender(view) {
+                                    view.fileInputEl.dom.setAttribute('accept', '.png, .jpeg, .jpg');
+                                    view.fileInputEl.dom.setAttribute('multiple', true);
+                                },
+                            },
                         },
                     ],
 
