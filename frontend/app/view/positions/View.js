@@ -15,11 +15,7 @@ Ext.define('HRSystem.view.positions.View', {
         { text: 'Кол-во вакатных мест', dataIndex: 'vacant_places', flex: 1 },
         { text: 'Кол-во всего мест', dataIndex: 'total_places', flex: 1 },
     ],
-
-    listeners: {
-        select: 'onItemSelected',
-    },
-
+	
     bbar: {
         xtype: 'pagingtoolbar',
     },
