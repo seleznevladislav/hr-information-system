@@ -1,4 +1,6 @@
 import Service from '../service/service.js';
+import path from 'path';
+const __dirname = path.resolve(path.dirname(''));
 
 const addItem = async (req, res, next) => {
     const Item = {
@@ -82,12 +84,15 @@ const getDocuments = async (req, res, next) => {
 };
 
 const getImages = async (req, res, next) => {
-    // try {
-    //     console.log(req);
-    // } catch (error) {
-    //     console.error(error);
-    //     res.sendStatus(500);
-    // }
+    try {
+		const filePath = __dirname + req.path;
+		const decodedString = decodeURIComponent(filePath.replace(/\+/g, ' '));
+		
+		res.download(decodedString);
+    } catch (error) {
+        console.error(error);
+        res.sendStatus(500);
+    }
 };
 
 const updateUser = async (req, res, next) => {

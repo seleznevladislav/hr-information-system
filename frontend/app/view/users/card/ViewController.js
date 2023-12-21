@@ -199,6 +199,6 @@ Ext.define('HRSystem.view.users.card.ViewController', {
     renderDownloadLink(value, _meta, record) {
         const path = record.get('path');
 
-        return `<a href=# onclick="window.open('${path}', '_blank')">${value}</a>`;
+        return `<a href=# onclick="window.open('${path.replace('\\', '\\&bsol;')}', '_blank')">${value}</a>`;
     },
 });

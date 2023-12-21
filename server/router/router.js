@@ -1,10 +1,8 @@
 import { Router } from 'express';
-import path from 'path';
 import Controller from '../controller/controller.js';
 import multer from 'multer';
 import storage from '../middlewares/File.js';
 
-const __dirname = path.resolve(path.dirname(''));
 const router = Router();
 const upload = multer({ storage });
 
@@ -19,7 +17,7 @@ router.post('/users/files', upload.single('file'), Controller.uploadFile);
 
 router.get('/documents', Controller.getDocuments);
 
-router.get('/images', Controller.getImages);
+router.get('/images/:filename', Controller.getImages);
 
 router.post('/login', Controller.validateLogin);
 
