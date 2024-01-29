@@ -5,23 +5,21 @@ Ext.define('HRSystem.view.main.List', {
     extend: 'Ext.grid.Panel',
     xtype: 'mainlist',
 
-    requires: [
-        'HRSystem.store.Personnel'
-    ],
+    requires: ['HRSystem.store.Personnel'],
 
     title: 'Personnel',
 
     store: {
-        type: 'personnel'
+        type: 'personnel',
     },
 
     columns: [
-        { text: 'Name',  dataIndex: 'name' },
+        { text: 'Name', dataIndex: 'name' },
         { text: 'Email', dataIndex: 'email', flex: 1 },
-        { text: 'Phone', dataIndex: 'phone', flex: 1 }
+        { text: 'Phone', dataIndex: 'phone', flex: 1 },
     ],
 
     listeners: {
-        select: 'onItemSelected'
-    }
+        select: 'onItemSelected',
+    },
 });

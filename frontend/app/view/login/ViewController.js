@@ -14,43 +14,43 @@ Ext.define('HRSystem.view.login.ViewController', {
 
             const mainPanel = Ext.widget('app-main').show();
 
-			mainPanel.getViewModel().set({ admin: data.admin });
+            mainPanel.getViewModel().set({ admin: data.admin });
         } else {
             const loginWindow = button.up('login');
 
-			const passwordField = loginWindow.down('[name="password"]');
-			passwordField.markInvalid('Данные неверны');
+            const passwordField = loginWindow.down('[name="password"]');
+            passwordField.markInvalid('Данные неверны');
 
-			const usernameField = loginWindow.down('[name="username"]');
-			usernameField.markInvalid('Данные неверны');
+            const usernameField = loginWindow.down('[name="username"]');
+            usernameField.markInvalid('Данные неверны');
         }
     },
 
     validateData(form) {
         return new Promise((resolve) => {
-			try {
-				form.submit({
-					url: '/login',
-	
-					success(_view, operation) {
-						if (operation.result[0]) {
-							resolve(operation.result[0]);
-						}
+            try {
+                form.submit({
+                    url: '/login',
 
-						resolve(false);
-					},
-	
-					failure(_view, operation) {
-						if (operation.result[0]) {
-							resolve(operation.result[0]);
-						}
+                    success(_view, operation) {
+                        if (operation.result[0]) {
+                            resolve(operation.result[0]);
+                        }
 
-						resolve(false);
-					},
-				});
-			} catch (error) {
-				console.warn(error, 'validateData');
-			}
-		})
+                        resolve(false);
+                    },
+
+                    failure(_view, operation) {
+                        if (operation.result[0]) {
+                            resolve(operation.result[0]);
+                        }
+
+                        resolve(false);
+                    },
+                });
+            } catch (error) {
+                console.warn(error, 'validateData');
+            }
+        });
     },
 });
