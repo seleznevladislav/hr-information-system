@@ -50,12 +50,8 @@ Ext.define('HRSystem.view.users.ViewController', {
         if (e.keyCode !== 13) {
             return;
         }
-<<<<<<< HEAD
 		// test
 		// test 2
-=======
-
->>>>>>> parent of 8ec4142 (chore: sdfg)
         this.searchByField(field);
     },
 
