@@ -51,6 +51,7 @@ Ext.define('HRSystem.view.users.ViewController', {
             return;
         }
 		// test
+		// test 2
         this.searchByField(field);
     },
 
