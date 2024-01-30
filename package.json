@@ -26,14 +26,10 @@
     "husky": "^9.0.7",
     "lint-staged": "^15.2.0"
   },
-  "husky": {
-	"hooks": {
-		"pre-commit": "lint-staged"
-	}
-  },
+  
   "lint-staged": {
-    "*.js": [
-      "prettier --ignore-unknown --write"
+    "**/*.js": [
+      "prettier -u --write"
     ]
   }
 }
