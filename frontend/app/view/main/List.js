@@ -12,6 +12,7 @@ Ext.define('HRSystem.view.main.List', {
     store: {
         type: 'personnel',
     },
+    // test
 
     columns: [
         { text: 'Name', dataIndex: 'name' },
